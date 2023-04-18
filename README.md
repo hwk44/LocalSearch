@@ -26,11 +26,34 @@
 <br>
 <hr>
 
-### foreach ... => 반복문
+### foreach ... => 반복문[
     generator async await
 
 ### Hill Climb Algorithm
- 
+    특정 좌표(x,y)를 기준으로 가장 낮/높은 값을 찾아라
+    좌표를 기반으로 좌우 값을 좀 더 살펴보자 => 계산이 오래 걸림
+
+### TSP 
+    1) 어디서 시작할것인가? => 시작지점은 랜덤을 사용한다.
+        -> 랜덤을 사용해 그나마 값이 적정값이라 가정하는 것
+
+    2) first_choice, 좌우를 둘러봐라
+        -> 지역 최적을 검색해야하는데
+        -> 해당 코드는 전역 최적을 찾는 알고리즘임
+<hr>
+
+#### TSP
+    정점 => 인접행렬
+        G => M , M => G  OR NetworkX
+
+    거리계산 => 맨해튼, 유클리드 거리 => 테이블로 만듦
+        최단거리 계산 => 최적인지는 확신할수 없음
+
+#### First Choice
+    언덕등반, 전역검색
+    Mutation(임의의 자료, Noise)
+
+<hr>
 
 ### 공부해야할거
     random(uniform) eval exec

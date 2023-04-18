@@ -1,11 +1,33 @@
 import numeric
 
 # assert 단언문
+
+# def test_create_problem():
+#     result = numeric.create_problem("./data/Convex.txt")
+#     test_case1 = result[0]
+#     test_case2 = (len(result[1]) , len(result[1][0]))
+#     test_case1_1 = "(x1 - 2) ** 2 +5 * (x2 - 5) ** 2 + 8 * (x3 + 8) ** 2 + 3 * (x4 + 1) ** 2 + 6 * (x5 - 7) ** 2"
+#     test_case2_1 = (3,5)
+#     assert test_case1 == test_case1_1
+#     assert test_case2 == test_case2_1
+
+filename = "./data/Convex.txt"
+exp = "(x1 - 2) ** 2 + 5 * (x2 - 5) ** 2 + 8 * (x3 + 8) ** 2 + 3 * (x4 + 1) ** 2 + 6 * (x5 - 7) ** 2"
+result = numeric.create_problem(filename)
+
+
 def test_create_problem():
-    result = numeric.create_problem("./data/Convex.txt")
-    test_case1 = result[0]
-    test_case2 = (len(result[1]) , len(result[1][0]))
-    test_case1_1 = "(x1 - 2) ** 2 +5 * (x2 - 5) ** 2 + 8 * (x3 + 8) ** 2 + 3 * (x4 + 1) ** 2 + 6 * (x5 - 7) ** 2"
-    test_case2_1 = (3,5)
-    assert test_case1 == test_case1_1
-    assert test_case2 == test_case2_1
+    test_case1, test_case2 = result
+    assert test_case1.strip() == exp
+    assert (len(test_case2), len(test_case2[0])) == (3, 5)
+
+
+def test_random_init():
+    test_case = numeric.random_init(result)
+    assert len(test_case) == 5
+    assert all([isinstance(x, float) for x in test_case])
+
+
+def test_evaluate():
+    test_case = numeric.evaluate([1, 1, 1, 1, 1], result)
+    assert test_case == 957
