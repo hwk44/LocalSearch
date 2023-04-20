@@ -11,7 +11,7 @@ import numeric
 #     assert test_case1 == test_case1_1
 #     assert test_case2 == test_case2_1
 
-filename = "./data/Convex.txt"
+filename = "../data/Convex.txt"
 exp = "(x1 - 2) ** 2 + 5 * (x2 - 5) ** 2 + 8 * (x3 + 8) ** 2 + 3 * (x4 + 1) ** 2 + 6 * (x5 - 7) ** 2"
 result = numeric.create_problem(filename)
 

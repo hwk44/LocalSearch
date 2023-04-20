@@ -88,7 +88,7 @@ def coordinate(solution):
 
 
 if __name__ == "__main__":  # __ => entry point 진입 지점
-    p = create_problem("./data/tsp30.txt")
+    p = create_problem("../data/tsp30.txt")
     # print(p[0])
     # print(p[1])
     # print(p[2])
