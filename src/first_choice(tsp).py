@@ -44,7 +44,7 @@
 #     solution, minimum = first_choice(p)
 #     print(solution)
 #     print(minimum)
-
+from src.numeric import display_result
 # =========================================================================================================
 
 from tsp import *
